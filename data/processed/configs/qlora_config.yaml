@@ -1,0 +1,19 @@
+model_name: "mistralai/Mistral-7B-Instruct-v0.2"
+output_dir: "./pitch-evaluator-model"
+
+# QLoRA / PEFT settings
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+target_modules: ["q_proj", "v_proj"]
+load_in_4bit: true
+
+# Training settings
+max_seq_length: 1024
+learning_rate: 0.0002
+num_epochs: 3
+batch_size: 4
+gradient_accumulation_steps: 4
+
+# Hugging Face Hub
+hf_repo_id: "Danyy41/startup-pitch-evaluator-qlora"
